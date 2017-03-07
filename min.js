@@ -1,6 +1,21 @@
 function min(numbers) {
-    // Write code here that returns the smallest value in numbers
-    console.log(numbers);
+  let firstNumber;
+  let secondNumber;
+  let temp = [];
+  for (let i = 0; i < numbers.length; i++){ //loop through the array of numbers
+  	for(let k = 0; k < numbers.length; k++) {
+    	let counter = k;
+    	firstNumber = numbers[counter]
+    	secondNumber = numbers[counter+1]
+    	if (firstNumber > secondNumber){
+    	  temp.push(secondNumber)
+    	  numbers[i+1] = firstNumber
+    	}else{
+    	  temp.push(firstNumber)
+    	}
+  	}
+  }
+  return temp
 }
 
 
@@ -10,6 +25,7 @@ function min(numbers) {
  */
 
 var flightPrices = [1260, 490, 599, 1400, 820];
+<<<<<<< HEAD
 console.log("The cheapest flight amongst $1260, $490, $599, $1400 and $820 costs $" + min(flightPrices));
 
 var golfScores = [-1, 3, 0, -4, 1, 4, -2];
@@ -21,3 +37,13 @@ console.log("The shortest book out of a list of single book with 232 pages has "
 var temperatures = [45, 10, -20, 0, 3, -20];
 console.log("The coldest temperature amongst 45C, 10C, -20C, 0C, 3C and -20C is " + min(temperatures) + "C");
 
+=======
+// console.log("The cheapest flight amongst $1260, $490, $599, $1400 and $820 costs $" + min(flightPrices));
+console.log(min(flightPrices));
+var golfScores = [-1, 3, 0, -4, 1, 4, -2];
+// console.log("The winning golf score amongst -1, 3, 0, -4, 1, 4 and 1 is " + min(golfScores));
+var pageNumbers = [232];
+// console.log("The shortest book out of a list of single book with 232 pages has " + min(pageNumbers) + " pages");
+var temperatures = [45, 10, -20, 0, 3, -20];
+// console.log("The coldest temperature amongst 45C, 10C, -20C, 0C, 3C and -20C is " + min(temperatures) + "C");
+>>>>>>> 94828858f7a714169220243eb36dbea3d45fb4da
