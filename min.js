@@ -22,11 +22,6 @@ function min(numbers) {
     		numbers[counter + 1] = otherNumber;
     		// this is where the a was and we assign b to it
     		numbers[counter] = temp;
-
-    	  	continue;
-    	}else{
-    		// already sorted
-    		continue;  	
     	}
   	}
   }
