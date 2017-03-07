@@ -1,16 +1,26 @@
 function min(numbers) {
-  // Outer loop is decrementing
+  // Outer loop is decrementing, as the inner loop pushes the biggest number
+  // to the end of the array
   for (let i = numbers.length; i > -1; i--){
+  	// Inner loop will loop over the array pushing the bigger number further
   	for(let k = 0; k < numbers.length; k++) {
+  		// temp variable is used to store the smaller number later
   		let temp = null;
+  		// counter ensures that we don't accidentally alter the k number
   		let counter = k;
-  		let otherNumber = numbers[counter]
+  		// this is the a in an a vs b scenario
+  		let otherNumber = numbers[counter];
+  		// this is the b in an a vs b scenario
     	let biggestNumber = numbers[counter + 1];
 
+    	// compare if a is bigger than b
     	if (otherNumber > biggestNumber){
-    		// this is the smaller number
+    		// this is the smaller number that was in b's spot
+    		// need to move it to a's spot
     		temp = biggestNumber;
+    		// this is where the b was and we assign a to it
     		numbers[counter + 1] = otherNumber;
+    		// this is where the a was and we assign b to it
     		numbers[counter] = temp;
 
     	  	continue;
@@ -31,6 +41,8 @@ function min(numbers) {
  */
 
 var flightPrices = [1260, 490, 599, 1400, 820];
+
+// Testing the function
 min(flightPrices);
 
 // console.log("The cheapest flight amongst $1260, $490, $599, $1400 and $820 costs $" + min(flightPrices));
