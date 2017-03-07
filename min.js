@@ -1,21 +1,27 @@
 function min(numbers) {
-  let firstNumber;
-  let secondNumber;
-  let temp = [];
-  for (let i = 0; i < numbers.length; i++){ //loop through the array of numbers
+  // Outer loop is decrementing
+  for (let i = numbers.length; i > -1; i--){
   	for(let k = 0; k < numbers.length; k++) {
-    	let counter = k;
-    	firstNumber = numbers[counter]
-    	secondNumber = numbers[counter+1]
-    	if (firstNumber > secondNumber){
-    	  temp.push(secondNumber)
-    	  numbers[i+1] = firstNumber
+  		let temp = null;
+  		let counter = k;
+  		let otherNumber = numbers[counter]
+    	let biggestNumber = numbers[counter + 1];
+
+    	if (otherNumber > biggestNumber){
+    		// this is the smaller number
+    		temp = biggestNumber;
+    		numbers[counter + 1] = otherNumber;
+    		numbers[counter] = temp;
+
+    	  	continue;
     	}else{
-    	  temp.push(firstNumber)
+    		// already sorted
+    		continue;  	
     	}
   	}
   }
-  return temp
+  console.log(numbers);
+  return numbers;
 }
 
 
@@ -25,25 +31,26 @@ function min(numbers) {
  */
 
 var flightPrices = [1260, 490, 599, 1400, 820];
-<<<<<<< HEAD
-console.log("The cheapest flight amongst $1260, $490, $599, $1400 and $820 costs $" + min(flightPrices));
+min(flightPrices);
 
-var golfScores = [-1, 3, 0, -4, 1, 4, -2];
-console.log("The winning golf score amongst -1, 3, 0, -4, 1, 4 and 1 is " + min(golfScores));
-
-var pageNumbers = [232];
-console.log("The shortest book out of a list of single book with 232 pages has " + min(pageNumbers) + " pages");
-
-var temperatures = [45, 10, -20, 0, 3, -20];
-console.log("The coldest temperature amongst 45C, 10C, -20C, 0C, 3C and -20C is " + min(temperatures) + "C");
-
-=======
 // console.log("The cheapest flight amongst $1260, $490, $599, $1400 and $820 costs $" + min(flightPrices));
-console.log(min(flightPrices));
-var golfScores = [-1, 3, 0, -4, 1, 4, -2];
+
+// var golfScores = [-1, 3, 0, -4, 1, 4, -2];
 // console.log("The winning golf score amongst -1, 3, 0, -4, 1, 4 and 1 is " + min(golfScores));
-var pageNumbers = [232];
+
+// var pageNumbers = [232];
 // console.log("The shortest book out of a list of single book with 232 pages has " + min(pageNumbers) + " pages");
-var temperatures = [45, 10, -20, 0, 3, -20];
+
+// var temperatures = [45, 10, -20, 0, 3, -20];
 // console.log("The coldest temperature amongst 45C, 10C, -20C, 0C, 3C and -20C is " + min(temperatures) + "C");
->>>>>>> 94828858f7a714169220243eb36dbea3d45fb4da
+
+
+// // console.log("The cheapest flight amongst $1260, $490, $599, $1400 and $820 costs $" + min(flightPrices));
+// console.log(min(flightPrices));
+// var golfScores = [-1, 3, 0, -4, 1, 4, -2];
+// // console.log("The winning golf score amongst -1, 3, 0, -4, 1, 4 and 1 is " + min(golfScores));
+// var pageNumbers = [232];
+// // console.log("The shortest book out of a list of single book with 232 pages has " + min(pageNumbers) + " pages");
+// var temperatures = [45, 10, -20, 0, 3, -20];
+// // console.log("The coldest temperature amongst 45C, 10C, -20C, 0C, 3C and -20C is " + min(temperatures) + "C");
+
