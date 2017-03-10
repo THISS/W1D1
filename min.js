@@ -4,28 +4,28 @@
 //   // Outer loop is decrementing, as the inner loop pushes the biggest number
 //   // to the end of the array
 //   for (let i = numbers.length; i > -1; i--){
-//   	// Inner loop will loop over the array pushing the bigger number further
-//   	for(let k = 0; k < numbers.length; k++) {
-//   		// temp variable is used to store the smaller number later
-//   		let temp = null;
-//   		// counter ensures that we don't accidentally alter the k number
-//   		let counter = k;
-//   		// this is the a in an a vs b scenario
-//   		let otherNumber = numbers[counter];
-//   		// this is the b in an a vs b scenario
-//     	let biggestNumber = numbers[counter + 1];
+//     // Inner loop will loop over the array pushing the bigger number further
+//     for(let k = 0; k < numbers.length; k++) {
+//       // temp variable is used to store the smaller number later
+//       let temp = null;
+//       // counter ensures that we don't accidentally alter the k number
+//       let counter = k;
+//       // this is the a in an a vs b scenario
+//       let otherNumber = numbers[counter];
+//       // this is the b in an a vs b scenario
+//       let biggestNumber = numbers[counter + 1];
 
-//     	// compare if a is bigger than b
-//     	if (otherNumber > biggestNumber){
-//     		// this is the smaller number that was in b's spot
-//     		// need to move it to a's spot
-//     		temp = biggestNumber;
-//     		// this is where the b was and we assign a to it
-//     		numbers[counter + 1] = otherNumber;
-//     		// this is where the a was and we assign b to it
-//     		numbers[counter] = temp;
-//     	}
-//   	}
+//       // compare if a is bigger than b
+//       if (otherNumber > biggestNumber){
+//         // this is the smaller number that was in b's spot
+//         // need to move it to a's spot
+//         temp = biggestNumber;
+//         // this is where the b was and we assign a to it
+//         numbers[counter + 1] = otherNumber;
+//         // this is where the a was and we assign b to it
+//         numbers[counter] = temp;
+//       }
+//     }
 //   }
 //   console.log(numbers);
 //   return numbers;
@@ -33,19 +33,18 @@
 
 // answering the question the right way
 function min(numbers) {
-	// if an empty array is given exit out
-	if(numbers.length < 1){
-		console.log("Must give a non empty array");
-	}
-	
-	let smallestNumber = numbers[0];
-	for(var i = 1; i < numbers.length; i++) {
-		if(numbers[i] < smallestNumber) {
-			smallestNumber = numbers[i];
-		}
-	}
-	// console.log(smallestNumber);
-	return smallestNumber;
+  // if an empty array is given exit out
+  if(numbers.length < 1){
+    console.log("Must give a non empty array");
+  }
+  let smallestNumber = numbers[0];
+  for(var i = 1; i < numbers.length; i++) {
+    if(numbers[i] < smallestNumber) {
+      smallestNumber = numbers[i];
+    }
+  }
+  // console.log(smallestNumber);
+  return smallestNumber;
 }
 
 
